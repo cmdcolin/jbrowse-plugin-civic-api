@@ -38,16 +38,6 @@
   "tracks": [
     {
       "type": "FeatureTrack",
-      "trackId": "civic_hg19",
-      "name": "CIVIC cancer variants hg19",
-      "category": ["Annotation"],
-      "assemblyNames": ["hg19"],
-      "adapter": {
-        "type": "CIVICAdapter"
-      }
-    },
-    {
-      "type": "FeatureTrack",
       "trackId": "ncbi_gff_hg19",
       "name": "NCBI RefSeq (GFF3Tabix)",
       "assemblyNames": ["hg19"],
