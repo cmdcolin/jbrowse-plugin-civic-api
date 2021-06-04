@@ -1,3 +1,7 @@
+# v1.0.3
+
+- Only add track if it does not exist
+
 # v1.0.2
 
 - Automatically add CIVIC track on hg19 in autorun
