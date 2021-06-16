@@ -20,9 +20,9 @@ export default class CIVICPlugin extends Plugin {
     );
   }
 
-  configure(pm: PluginManager) {
+  configure(pluginManager: PluginManager) {
     autorun(() => {
-      const root = pm.rootModel;
+      const root = pluginManager.rootModel;
       const session = root?.session;
       if (root && session) {
         //@ts-ignore remove me once this is in abstract session model
