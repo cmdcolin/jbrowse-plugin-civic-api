@@ -1,6 +1,6 @@
 {
   "name": "jbrowse-plugin-civic",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "JBrowse 2 CIVIC API plugin",
   "repository": "github:cmdcolin/jbrowse-plugin-civic-api",
   "jbrowse-plugin": {
