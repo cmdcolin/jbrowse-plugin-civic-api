@@ -12,11 +12,6 @@ export const configSchema = ConfigurationSchema(
     base: {
       type: "string",
       description: "URL for the CIVIC API",
-      defaultValue: "https://civicdb.org/api/variants?count=9999999&page=1",
-    },
-    track: {
-      type: "string",
-      description: "the track to select data from",
       defaultValue: "",
     },
   },

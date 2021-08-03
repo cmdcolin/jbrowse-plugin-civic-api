@@ -42,6 +42,7 @@ export default class CIVICPlugin extends Plugin {
             assemblyNames: ["hg19"],
             adapter: {
               type: "CIVICAdapter",
+              base: "https://civicdb.org/api/variants?count=9999999&page=1",
             },
           });
         }
