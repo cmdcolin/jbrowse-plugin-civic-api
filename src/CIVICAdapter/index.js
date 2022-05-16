@@ -39,32 +39,45 @@ export class AdapterClass extends BaseFeatureDataAdapter {
     const { coordinates, id, description, ...rest } = data;
     const { start, stop, chromosome } = coordinates;
 
-    return new SimpleFeature({
-      ...rest,
-      coordinates,
-      id,
-      start: start - 1,
-      end: stop,
-      refName: chromosome,
-      uniqueId: id,
-      ...(description && { description }),
-    });
+    if (start - 1 < stop) {
+      return new SimpleFeature({
+        ...rest,
+        coordinates,
+        id:
+          '<a href="https://civicdb.org/variants/' +
+          id +
+          '/summary">CIVIC DB - ' +
+          id +
+          "</a>",
+        start: start - 1,
+        end: stop,
+        refName: chromosome,
+        uniqueId: id,
+        ...(description && { description }),
+      });
+    } else {
+      console.warn("Feature with start>end", data);
+      return undefined;
+    }
   }
 
   getFeatures(region) {
-    return ObservableCreate(async observer => {
+    return ObservableCreate(async (observer) => {
       try {
         const data = await this.setup();
-        data.records.forEach(r => {
-          const f = this.formatFeature(r);
-          if (
-            f.get("refName") === region.refName &&
-            f.get("end") >= region.start &&
-            f.get("start") <= region.end
-          ) {
+        const { refName, start, end } = region;
+        data.records
+          .map((r) => this.formatFeature(r))
+          .filter((f) => !!f)
+          .filter(
+            (f) =>
+              f.get("refName") === refName &&
+              f.get("end") >= start &&
+              f.get("start") <= end,
+          )
+          .forEach((f) => {
             observer.next(f);
-          }
-        });
+          });
         observer.complete();
       } catch (e) {
         observer.error(e);

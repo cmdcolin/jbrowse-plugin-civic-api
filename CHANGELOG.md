@@ -1,3 +1,7 @@
+# v1.0.6
+
+- Fix bug with start greater than end
+
 # v1.0.5
 
 - Fix bug where the snapshot would be automatically removed

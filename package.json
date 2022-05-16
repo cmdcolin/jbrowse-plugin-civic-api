@@ -39,8 +39,8 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.10.4",
-    "@jbrowse/core": "^1.0.3",
-    "@jbrowse/development-tools": "^1.0.3",
+    "@jbrowse/core": "^1.7.7",
+    "@jbrowse/development-tools": "^1.6.9",
     "@material-ui/core": "^4.9.13",
     "@material-ui/lab": "^4.0.0-alpha.45",
     "@types/react": "^17.0.0",
@@ -53,5 +53,9 @@
     "serve": "^11.3.2",
     "tslib": "^2.0.3",
     "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "babel-jest": "^28.1.0",
+    "browserslist": "^4.20.3"
   }
 }
