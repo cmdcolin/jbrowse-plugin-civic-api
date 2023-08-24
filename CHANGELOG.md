@@ -1,3 +1,7 @@
+# v1.0.8
+
+Updated deps build new target
+
 # v1.0.7
 
 Fix demo link
